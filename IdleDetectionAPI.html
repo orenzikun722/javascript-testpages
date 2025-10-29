@@ -7,9 +7,10 @@
 <body>
   <button id="startBtn">start</button>
   <button id="stopBtn">stop</button>
-  <script>
-    const controller = new AbortController();
+  <script>const controller = new AbortController();
 const signal = controller.signal;
+const startButton = document.getElementById('startBtn');
+  const stopButton = document.getElementById('stopBtn');
 
 startButton.addEventListener("click", async () => {
   if ((await IdleDetector.requestPermission()) !== "granted") {
